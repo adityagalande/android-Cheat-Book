@@ -1,63 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="17dp"
-    android:background="@drawable/custom_design"
-    android:elevation="8dp"
-    android:orientation="vertical"
-    android:padding="3dp">
+    android:orientation="vertical">
 
-    <ImageView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@mipmap/age_of_empire_3" />
+        android:layout_margin="17dp"
+        android:background="@drawable/custom_design"
+        android:elevation="8dp"
+        android:orientation="vertical"
+        android:padding="3dp">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="3dp"
-        android:paddingTop="2dp"
-        android:paddingBottom="2dp"
-        android:text="Red Dead Redemption 2"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold" />
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="3dp">
+        <ImageView
+            android:id="@+id/gameImageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/todo"
+            android:src="@mipmap/age_of_empire_3" />
 
         <TextView
-            android:id="@+id/ratingText"
+            android:id="@+id/gameTitleView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_centerVertical="true"
-            android:text="(2.5)"
-            android:textAlignment="center"
-            android:textSize="12sp" />
+            android:layout_marginStart="3dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:text="Red Dead Redemption 2" />
 
-        <RatingBar
-            style="@style/Widget.AppCompat.RatingBar.Small"
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp">
+
+            <TextView
+                android:id="@+id/gameRatingTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:textAlignment="center"
+                android:textSize="12sp"
+                tools:text="(2.5)" />
+
+            <RatingBar
+                android:id="@+id/gameRatingView"
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="7dp"
+                android:layout_toEndOf="@+id/gameRatingTextView"
+                android:numStars="5"
+                android:progressTint="@color/yellow"
+                android:stepSize="0.5" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/gameDateTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="7dp"
-            android:layout_toEndOf="@+id/ratingText"
-            android:numStars="5"
-            android:rating="2.5"
-            android:stepSize="0.5" />
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="3dp"
+            tools:text="Release Date : Sep 17, 2013" />
 
-    </RelativeLayout>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="3dp"
-        android:layout_marginTop="3dp"
-        android:text="Release : 20-November-1972" />
-
-
+    </LinearLayout>
 </LinearLayout>
