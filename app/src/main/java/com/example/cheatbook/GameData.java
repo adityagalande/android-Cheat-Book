@@ -19,11 +19,15 @@ public class GameData {
     }
 
     public String getDate() {
-        return date;
+        return "Release Date : "+date;
     }
 
     public String getRatings() {
         return ratings;
+    }
+
+    public String getTextRatings(){
+        return "("+ratings+")";
     }
 
     public int getImageID() {

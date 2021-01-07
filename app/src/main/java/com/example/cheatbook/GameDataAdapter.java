@@ -35,7 +35,7 @@ public class GameDataAdapter extends ArrayAdapter<GameData> {
         gameDateTextView.setText(itemPosition.getDate());
 
         TextView gameRatingsTextView = (TextView) listItemView.findViewById(R.id.gameRatingTextView);
-        gameRatingsTextView.setText(itemPosition.getRatings());
+        gameRatingsTextView.setText(itemPosition.getTextRatings());
 
         ImageView gameImageView = (ImageView) listItemView.findViewById(R.id.gameImageView);
         gameImageView.setImageResource(itemPosition.getImageID());
