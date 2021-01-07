@@ -9,6 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CheatBook">
+        <activity android:name=".XboxActivity"></activity>
+        <activity android:name=".PS4Activity" />
+        <activity android:name=".PS3Activity" />
+        <activity android:name=".PCActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
