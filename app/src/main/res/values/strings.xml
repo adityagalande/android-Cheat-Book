@@ -3,4 +3,8 @@
     <string name="search">Search</string>
     <string name="cheat_book">Cheat Book</string>
     <string name="game_name">Game name</string>
+    <string name="pc">PC</string>
+    <string name="xbox">Xbox</string>
+    <string name="ps3">PS3</string>
+    <string name="ps4">PS4</string>
 </resources>
