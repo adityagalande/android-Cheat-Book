@@ -19,10 +19,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        RelativeLayout pcButton = (RelativeLayout ) findViewById(R.id.pc_button);
-        RelativeLayout ps3Button = (RelativeLayout ) findViewById(R.id.ps3_button);
-        RelativeLayout ps4Button = (RelativeLayout ) findViewById(R.id.ps4_button);
-        RelativeLayout xboxButton = (RelativeLayout ) findViewById(R.id.xbox_button);
+        RelativeLayout pcButton = (RelativeLayout) findViewById(R.id.pc_button);
+        RelativeLayout ps3Button = (RelativeLayout) findViewById(R.id.ps3_button);
+        RelativeLayout ps4Button = (RelativeLayout) findViewById(R.id.ps4_button);
+        RelativeLayout xboxButton = (RelativeLayout) findViewById(R.id.xbox_button);
 
         pcButton.setOnClickListener(this);
         ps3Button.setOnClickListener(this);
@@ -31,10 +31,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
         final ArrayList<GameData> mostPopular = new ArrayList<>();
-        mostPopular.add(new GameData("Age of Empire III","18 October 2005","3.5", R.mipmap.age_of_empire_3));
-        mostPopular.add(new GameData("Age of Empire II The Age of King","18 June 2012","5.0", R.mipmap.age_of_empire_2_the_age_of_king));
-        mostPopular.add(new GameData("Age of Empire II The Conquerors Expansion","26 November 1984","4.5", R.mipmap.age_of_empire_2_the_conqurors_expansion));
-        mostPopular.add(new GameData("Age of Mythology","05 January 2008","2.5", R.mipmap.age_of_mythology));
+        mostPopular.add(new GameData("Red Dead Redemption II", "26 October 2018", "4.7", R.drawable.red_dead_redemption_2));
+        mostPopular.add(new GameData("Assassin's Creed Valhalla", "10 November 2020", "3.8", R.drawable.assassins_creed_valhalla));
+        mostPopular.add(new GameData("Cyberpunk 2077", "10 December 2020", "4.5", R.drawable.cyberpunk_2077));
+        mostPopular.add(new GameData("Inside", "29 June 2016", "4.8", R.drawable.inside));
+        mostPopular.add(new GameData("Grand Theft Auto V", "17 September 2013", "4.9", R.drawable.grand_theft_auto_v));
+        mostPopular.add(new GameData("Fortnite", "21 July 2017", "3.5", R.drawable.fortnite));
+        mostPopular.add(new GameData("Rocket League", " 7 July 2015", "4.1", R.drawable.rocket_league));
+        mostPopular.add(new GameData("PlayerUnknown's Battlegrounds", "23 March 2017", "4.5", R.drawable.playersunknowns_battlegrounds));
+        mostPopular.add(new GameData("Alien: Isolation", "6 October 2014", "4.7", R.drawable.alien_isolation));
+        mostPopular.add(new GameData("Assassin's Creed Odyssey", "2 October 2018", "4.3", R.drawable.assassins_creed_odyssey));
 
         ListView listView = (ListView) findViewById(R.id.mostPopularView);
         GameDataAdapter gameDataAdapter = new GameDataAdapter(this, mostPopular);
