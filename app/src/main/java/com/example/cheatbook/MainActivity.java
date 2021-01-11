@@ -32,9 +32,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         final ArrayList<GameData> mostPopular = new ArrayList<>();
         mostPopular.add(new GameData("Age of Empire III","18 October 2005","3.5", R.mipmap.age_of_empire_3));
-        mostPopular.add(new GameData("Age of Empire III","18 October 2005","1.5", R.mipmap.age_of_empire_2_the_age_of_king));
-        mostPopular.add(new GameData("Age of Empire III","18 October 2005","4.5", R.mipmap.age_of_empire_2_the_conqurors_expansion));
-        mostPopular.add(new GameData("Age of Empire III","18 October 2005","2.5", R.mipmap.age_of_mythology));
+        mostPopular.add(new GameData("Age of Empire II The Age of King","18 June 2012","5.0", R.mipmap.age_of_empire_2_the_age_of_king));
+        mostPopular.add(new GameData("Age of Empire II The Conquerors Expansion","26 November 1984","4.5", R.mipmap.age_of_empire_2_the_conqurors_expansion));
+        mostPopular.add(new GameData("Age of Mythology","05 January 2008","2.5", R.mipmap.age_of_mythology));
 
         ListView listView = (ListView) findViewById(R.id.mostPopularView);
         GameDataAdapter gameDataAdapter = new GameDataAdapter(this, mostPopular);
