@@ -9,13 +9,12 @@ import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 
 import java.util.List;
 
 public class GameDataAdapter extends ArrayAdapter<GameData> {
-    public GameDataAdapter(@NonNull Context context, @NonNull List<GameData> GameObject) {
-        super(context, 0, GameObject );
+    public GameDataAdapter( Context context, int resource, List<GameData> GameObject) {
+        super(context, resource, GameObject );
     }
 
     @Override
