@@ -6,6 +6,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.SearchView;
@@ -50,9 +51,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mostPopular.add(new GameData("Assassin's Creed Odyssey", "2 October 2018", "4.3", R.drawable.assassins_creed_odyssey));
         mostPopular.add(new GameData("Minecraft", "18 November 2011", "3.4", R.drawable.minecraft));
 
-        ListView listView = (ListView) findViewById(R.id.mostPopularView);
+        listView = (ListView) findViewById(R.id.mostPopularView);
         GameDataAdapter gameDataAdapter = new GameDataAdapter(this,0, mostPopular);
         listView.setAdapter(gameDataAdapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(MainActivity.this, PS4Activity.class);
+                startActivity(intent);
+            }
+        });
     }
 
 
