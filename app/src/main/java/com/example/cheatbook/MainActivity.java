@@ -14,8 +14,11 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    public static ArrayList<GameData> mostPopular = new ArrayList<>();
-    
+    public static ArrayList<GameData> mostPopular = new ArrayList<GameData>();
+    private ListView listView;
+    private String selectFilter = "all";
+    private String currentSearchText = "";
+    private SearchView searchView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ps4Button.setOnClickListener(this);
         xboxButton.setOnClickListener(this);
 
-
+        initSearchWidgets();
         mostPopular.add(new GameData("Red Dead Redemption II", "26 October 2018", "4.7", R.drawable.red_dead_redemption_2));
         mostPopular.add(new GameData("Assassin's Creed Valhalla", "10 November 2020", "3.8", R.drawable.assassins_creed_valhalla));
         mostPopular.add(new GameData("Cyberpunk 2077", "10 December 2020", "4.5", R.drawable.cyberpunk_2077));
@@ -48,10 +51,42 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mostPopular.add(new GameData("Minecraft", "18 November 2011", "3.4", R.drawable.minecraft));
 
         ListView listView = (ListView) findViewById(R.id.mostPopularView);
-        GameDataAdapter gameDataAdapter = new GameDataAdapter(this, mostPopular);
+        GameDataAdapter gameDataAdapter = new GameDataAdapter(this,0, mostPopular);
         listView.setAdapter(gameDataAdapter);
-
     }
+
+
+    private void initSearchWidgets(){
+        searchView = (SearchView) findViewById(R.id.search_bar);
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String newText) { return false; }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                currentSearchText = newText;
+                ArrayList<GameData> filterShapes = new ArrayList<>();
+
+                for(GameData gameData : mostPopular){
+                    if(gameData.getTitle().toLowerCase().contains(newText.toLowerCase())){
+                        if(selectFilter.equals("all")){
+                            filterShapes.add(gameData);
+                        }else {
+                            if(gameData.getTitle().toLowerCase().contains(selectFilter)){
+                                filterShapes.add(gameData);
+                            }
+                        }
+                    }
+                }
+                GameDataAdapter adapter = new GameDataAdapter(getApplicationContext(),0 , filterShapes);
+                listView.setAdapter(adapter);
+
+                return false;
+            }
+        });
+    }
+
 
 
     @SuppressLint("NonConstantResourceId")
