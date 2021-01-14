@@ -8,10 +8,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
+import android.widget.SearchView;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
+    public static ArrayList<GameData> mostPopular = new ArrayList<>();
+    
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +33,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         xboxButton.setOnClickListener(this);
 
 
-        final ArrayList<GameData> mostPopular = new ArrayList<>();
         mostPopular.add(new GameData("Red Dead Redemption II", "26 October 2018", "4.7", R.drawable.red_dead_redemption_2));
         mostPopular.add(new GameData("Assassin's Creed Valhalla", "10 November 2020", "3.8", R.drawable.assassins_creed_valhalla));
         mostPopular.add(new GameData("Cyberpunk 2077", "10 December 2020", "4.5", R.drawable.cyberpunk_2077));
@@ -48,8 +51,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         GameDataAdapter gameDataAdapter = new GameDataAdapter(this, mostPopular);
         listView.setAdapter(gameDataAdapter);
 
-
     }
+
 
     @SuppressLint("NonConstantResourceId")
     @Override
