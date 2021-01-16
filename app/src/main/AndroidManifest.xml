@@ -10,12 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CheatBook">
         <activity android:name=".XboxActivity" />
-        <activity android:name=".PS4Activity"/>
+        <activity android:name=".PS4Activity" />
         <activity android:name=".PS3Activity" />
         <activity android:name=".PCActivity" />
-        <activity
-            android:name=".MainActivity"
-            android:screenOrientation="portrait">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
