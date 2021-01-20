@@ -6,6 +6,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -16,7 +17,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    public static ArrayList<GameData> mostPopular = new ArrayList<GameData>();
+    public static final ArrayList<GameData> mostPopular = new ArrayList<GameData>();
     SearchView searchView;
     private ListView listView;
     private final String selectFilter = "all";
@@ -57,9 +58,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         GameDataAdapter gameDataAdapter = new GameDataAdapter(this, 0, mostPopular);
         listView.setAdapter(gameDataAdapter);
 
+        Log.v("MainActivity","-----------------------------------------------------------OnCreate");
+
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Log.v("MainActivity","-----------------------------------------------------------OnItemClick");
                 GameData gameData = (GameData) (listView.getItemAtPosition(position));
                 Intent intent = new Intent(getApplicationContext(), PS4Activity.class);
                 startActivity(intent);
@@ -67,6 +71,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         });
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mostPopular.clear();
+        Log.v("MainActivity","-----------------------------------------------------------OnDestroyed");
+    }
 
     private void initSearchWidgets() {
         searchView = (SearchView) findViewById(R.id.search_bar);
@@ -84,13 +94,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 for (GameData gameData : mostPopular) {
                     if (gameData.getTitle().toLowerCase().contains(newText.toLowerCase())) {
-                        if (selectFilter.equals("all")) {
-                            filterShapes.add(gameData);
-                        } else {
-                            if (gameData.getTitle().toLowerCase().contains(selectFilter)) {
-                                filterShapes.add(gameData);
-                            }
-                        }
+                        filterShapes.add(gameData);
                     }
                 }
                 GameDataAdapter adapter = new GameDataAdapter(getApplicationContext(), 0, filterShapes);
@@ -101,13 +105,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         });
     }
 
-    public void onBackPressed() {
-        if (!searchView.isIconified()) {
-            searchView.setIconified(true);
-        } else {
-            super.onBackPressed();
-        }
-    }
+//    public void onBackPressed() {
+//        if (!searchView.isIconified()) {
+//            searchView.setIconified(true);
+//        } else {
+//            super.onBackPressed();
+//        }
+//    }
 
 
     @SuppressLint("NonConstantResourceId")
