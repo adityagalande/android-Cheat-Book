@@ -9,22 +9,48 @@
     <ImageView
         android:id="@+id/abc"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="250dp"
         android:scaleType="fitXY"
-        android:src="@drawable/amongus" />
+        android:src="@drawable/red_dead_redemption_2" />
+
+    <TextView
+        android:id="@+id/gameTitlee"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
+        android:padding="4dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:textColor="@color/black"
+        android:fontFamily="sans-serif-black"
+        android:text="Red Dead Redemption II"
+        android:elevation="4dp"
+        android:layout_below="@+id/abc"
+        android:textSize="25sp"
+        android:background="@drawable/layout_bg"
+        android:textStyle="bold|italic"/>
 
     <ScrollView
+        android:id="@+id/scrollText"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/abc"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/gameTitlee"
         android:padding="6dp">
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
         <TextView
             android:id="@+id/gamaname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
             android:textStyle="italic|bold"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
+            android:paddingBottom="10dp"
             tools:text="" />
+
+
+        </RelativeLayout>
     </ScrollView>
 </RelativeLayout>
