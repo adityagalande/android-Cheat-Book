@@ -32,6 +32,7 @@
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold"
+            android:fontFamily="@font/rakkas_regular"
             tools:text="Red Dead Redemption 2" />
 
         <RelativeLayout

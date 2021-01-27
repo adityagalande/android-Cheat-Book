@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CheatBook">
+        <activity android:name=".DetailCustomLayout"></activity>
         <activity android:name=".XboxActivity" />
         <activity android:name=".PS4Activity" />
         <activity android:name=".PS3Activity" />

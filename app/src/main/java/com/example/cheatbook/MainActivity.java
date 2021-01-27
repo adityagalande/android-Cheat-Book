@@ -15,6 +15,8 @@ import android.widget.SearchView;
 
 import java.util.ArrayList;
 
+import GameContent.GameContents;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     public static final ArrayList<GameData> mostPopular = new ArrayList<GameData>();
@@ -40,42 +42,32 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         xboxButton.setOnClickListener(this);
 
         initSearchWidgets();
-        mostPopular.add(new GameData("Red Dead Redemption II", "26 October 2018", "4.7", R.drawable.red_dead_redemption_2));
-        mostPopular.add(new GameData("Assassin's Creed Valhalla", "10 November 2020", "3.8", R.drawable.assassins_creed_valhalla));
-        mostPopular.add(new GameData("Cyberpunk 2077", "10 December 2020", "4.5", R.drawable.cyberpunk_2077));
-        mostPopular.add(new GameData("Inside", "29 June 2016", "4.8", R.drawable.inside));
-        mostPopular.add(new GameData("Among Us", "15 Jun 2018", "4.5", R.drawable.amongus));
-        mostPopular.add(new GameData("Grand Theft Auto V", "17 September 2013", "4.9", R.drawable.grand_theft_auto_v));
-        mostPopular.add(new GameData("Fortnite", "21 July 2017", "3.5", R.drawable.fortnite));
-        mostPopular.add(new GameData("Fall Guys: Ultimate Knockout", "04 Aug 2020", "3.7", R.drawable.fall_guys));
-        mostPopular.add(new GameData("Rocket League", " 7 July 2015", "4.1", R.drawable.rocket_league));
-        mostPopular.add(new GameData("PlayerUnknown's Battlegrounds", "23 March 2017", "4.5", R.drawable.playersunknowns_battlegrounds));
-        mostPopular.add(new GameData("Alien: Isolation", "6 October 2014", "4.7", R.drawable.alien_isolation));
-        mostPopular.add(new GameData("Assassin's Creed Odyssey", "2 October 2018", "4.3", R.drawable.assassins_creed_odyssey));
-        mostPopular.add(new GameData("Minecraft", "18 November 2011", "3.4", R.drawable.minecraft));
+        mostPopular.add(new GameData("0","Red Dead Redemption II", "26 October 2018", "4.7", R.drawable.red_dead_redemption_2, GameContents.Red_Dead_Redemption_II_PC));
+        mostPopular.add(new GameData("1","Assassin's Creed Valhalla", "10 November 2020", "3.8", R.drawable.assassins_creed_valhalla, GameContents.Assassins_Creed_Valhalla_PC));
+        mostPopular.add(new GameData("2","Cyberpunk 2077", "10 December 2020", "4.5", R.drawable.cyberpunk_2077, GameContents.Cyberpunk_2077_PC));
+        mostPopular.add(new GameData("3","Inside", "29 June 2016", "4.8", R.drawable.inside, GameContents.Inside_PC));
+        mostPopular.add(new GameData("4","Among Us", "15 Jun 2018", "4.5", R.drawable.amongus, GameContents.Among_Us_PC));
+        mostPopular.add(new GameData("5","Grand Theft Auto V", "17 September 2013", "4.9", R.drawable.grand_theft_auto_v, GameContents.Grand_Theft_Auto_V_Pc));
+        mostPopular.add(new GameData("6","Fortnite", "21 July 2017", "3.5", R.drawable.fortnite, GameContents.Fortnite_PC));
+        mostPopular.add(new GameData("7","Fall Guys: Ultimate Knockout", "04 Aug 2020", "3.7", R.drawable.fall_guys, GameContents.Fall_Guys_Ultimate_Knockout_PC));
+        mostPopular.add(new GameData("8","Rocket League", " 7 July 2015", "4.1", R.drawable.rocket_league, GameContents.Rocket_League_PC));
+        mostPopular.add(new GameData("9","PlayerUnknown's Battlegrounds", "23 March 2017", "4.5", R.drawable.playersunknowns_battlegrounds, GameContents.PlayerUnknowns_Battlegrounds_PC));
+        mostPopular.add(new GameData("10","Alien: Isolation", "6 October 2014", "4.7", R.drawable.alien_isolation, GameContents.Alien_Isolation_PC));
+        mostPopular.add(new GameData("11","Assassin's Creed Odyssey", "2 October 2018", "4.3", R.drawable.assassins_creed_odyssey, GameContents.Assassins_Creed_Odyssey_PC));
+        mostPopular.add(new GameData("12","Minecraft", "18 November 2011", "3.4", R.drawable.minecraft, GameContents.Minecraft_PC));
 
         listView = (ListView) findViewById(R.id.mostPopularView);
         GameDataAdapter gameDataAdapter = new GameDataAdapter(this, 0, mostPopular);
         listView.setAdapter(gameDataAdapter);
 
-        Log.v("MainActivity","-----------------------------------------------------------OnCreate");
-
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Log.v("MainActivity","-----------------------------------------------------------OnItemClick");
-                GameData gameData = (GameData) (listView.getItemAtPosition(position));
-                Intent intent = new Intent(getApplicationContext(), PS4Activity.class);
-                startActivity(intent);
-            }
-        });
+        setUpOnClickListener();
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
         mostPopular.clear();
-        Log.v("MainActivity","-----------------------------------------------------------OnDestroyed");
+        Log.v("MainActivity", "-----------------------------------------------------------OnDestroyed");
     }
 
     private void initSearchWidgets() {
@@ -105,13 +97,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         });
     }
 
-//    public void onBackPressed() {
-//        if (!searchView.isIconified()) {
-//            searchView.setIconified(true);
-//        } else {
-//            super.onBackPressed();
-//        }
-//    }
+
+    private void setUpOnClickListener(){
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                GameData gameData = (GameData) (listView.getItemAtPosition(position));
+                Intent intent = new Intent(getApplicationContext(), DetailCustomLayout.class);
+                intent.putExtra("Id", gameData.getId());
+                startActivity(intent);
+                Log.v("MainActivity","-----------------------------------------------------------setUpOnClickListener");
+            }
+        });
+
+    }
+
 
 
     @SuppressLint("NonConstantResourceId")
