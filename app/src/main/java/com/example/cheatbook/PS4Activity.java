@@ -146,7 +146,5 @@ public class PS4Activity extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_p_s4);
-        TextView textView = (TextView) findViewById(R.id.gamaname);
-        textView.setText(data);
     }
 }
