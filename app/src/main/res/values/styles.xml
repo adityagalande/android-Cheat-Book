@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="navigationTheme">
+        <!-- color of text and icon when SELECTED-->
+        <item name="colorPrimary">@color/yellow</item>
+        <!--Background color when SELECTED-->
+        <item name="colorControlHighlight">@color/black</item>
+    </style>
+</resources>
