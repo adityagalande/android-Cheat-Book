@@ -9,4 +9,13 @@
     <string name="ps4">PS4</string>
     <string name="most_popular">Most Popular</string>
     <string name="Red_Dead_Redemption_2">Red Dead Redemption II</string>
+    <string name="games_tips_hints_cheat_codes"><![CDATA[Games : Tips, Hints & Cheat Codes]]></string>
+    <string name="menu_cheatbook">CheatBook</string>
+    <string name="home">Home</string>
+    <string name="about">About</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="feedback">Feedback</string>
+    <string name="rate_us">Rate Us</string>
+    <string name="share">Share</string>
+    <string name="request_game">Request Game</string>
 </resources>
