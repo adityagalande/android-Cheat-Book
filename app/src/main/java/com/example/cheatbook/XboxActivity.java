@@ -12,5 +12,8 @@ public class XboxActivity extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_xbox);
+
+        getSupportActionBar().setTitle("XBOX");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 }

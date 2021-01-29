@@ -21,7 +21,10 @@
         android:fontFamily="@font/luckiestguy_regular"
         android:textSize="25sp"
         android:layout_above="@+id/menu_slogan"
-        android:textColor="@color/black"/>
+        android:textColor="@color/black"
+        android:paddingRight="2dp"
+        android:paddingTop="2dp"
+        android:paddingBottom="2dp"/>
 
     <ImageView
         android:layout_width="40dp"
@@ -32,6 +35,7 @@
     <ImageView
         android:layout_width="160dp"
         android:layout_height="175dp"
+        android:scaleType="fitEnd"
         android:src="@drawable/xbox_controller"
         android:layout_alignParentEnd="true"
         android:layout_centerVertical="true"/>

@@ -15,8 +15,13 @@ public class DetailCustomLayout extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_custom_layout);
+
+        getSupportActionBar().setTitle("Most Popular");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         getSelectedShape();
         setValues();
         Log.v("DetailCustomLayout","-----------------------------------------------------------OnCreate");

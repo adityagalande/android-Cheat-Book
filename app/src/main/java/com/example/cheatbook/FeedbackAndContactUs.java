@@ -10,5 +10,8 @@ public class FeedbackAndContactUs extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feedback_and_contact_us);
+
+        getSupportActionBar().setTitle("----------------");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 }
