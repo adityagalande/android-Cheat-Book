@@ -10,5 +10,8 @@ public class RequestGame extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_request_game);
+
+        getSupportActionBar().setTitle("Request Game");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 }

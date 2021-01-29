@@ -48,6 +48,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         super.onCreate(savedInstanceState);
+
+        try {
+            this.getSupportActionBar().hide();
+        } catch (NullPointerException ignored) {
+        }
+
         setContentView(R.layout.activity_main);
 
         //Menu hooks
@@ -102,7 +108,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 }
             }
         });
-
     }
 
     @Override
@@ -195,6 +200,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             public void onClick(View v) {
                 Intent number = new Intent(MainActivity.this, PCActivity.class);
                 startActivity(number);
+//                This code for Animation for spcific activity
+//                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             }
         });
 

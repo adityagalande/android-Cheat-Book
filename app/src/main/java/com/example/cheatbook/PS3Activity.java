@@ -12,5 +12,8 @@ public class PS3Activity extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_p_s3);
+
+        getSupportActionBar().setTitle("PlayStation3");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 }
