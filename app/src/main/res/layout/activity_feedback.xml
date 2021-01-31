@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Feedback">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/feedDataExternal"
+        android:layout_marginStart="17dp"
+        android:fontFamily="@font/sigmarone_regular"
+        android:shadowColor="#67587686"
+        android:shadowDx="10"
+        android:shadowDy="10"
+        android:shadowRadius="5"
+        android:text="@string/feedback_activity"
+        android:textColor="@color/black"
+        android:textSize="45sp"
+        android:textStyle="bold" />
+
+    <RelativeLayout
+        android:id="@+id/feedDataExternal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_margin="17dp"
+        android:background="@drawable/search_bar_design"
+        android:elevation="20dp">
+
+        <RelativeLayout
+            android:id="@+id/feedData"
+            android:layout_width="match_parent"
+            android:layout_height="470dp"
+            android:layout_marginLeft="17dp"
+            android:layout_marginTop="110dp"
+            android:layout_marginRight="17dp"
+            android:layout_marginBottom="17dp"
+            android:background="@drawable/card_deasign_2"
+            tools:ignore="RtlSymmetry">
+
+            <TextView
+                android:id="@+id/selectCountry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="70dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/card_deasign_2"
+                android:elevation=".5dp"
+                android:gravity="start|center_vertical"
+                android:padding="4dp"
+                android:text="@string/select_country"
+                android:textColor="@color/black" />
+
+            <Spinner
+                android:id="@+id/spinnerCountry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/selectCountry"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp" />
+
+            <EditText
+                android:id="@+id/name"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/spinnerCountry"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="10dp"
+                android:autofillHints=""
+                android:background="@drawable/card_deasign_2"
+                android:elevation="10dp"
+                android:gravity="start|center_vertical"
+                android:hint="@string/enter_your_name"
+                android:inputType="textPersonName"
+                android:lines="2"
+                android:maxLines="2"
+                android:minLines="1"
+                android:padding="6dp"
+                android:scrollbars="vertical" />
+
+            <EditText
+                android:id="@+id/emailSubject"
+                android:layout_width="205dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/name"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="10dp"
+                android:autofillHints=""
+                android:background="@drawable/card_deasign_2"
+                android:elevation="10dp"
+                android:gravity="start|center_vertical"
+                android:hint="@string/subject"
+                android:inputType="textEmailSubject"
+                android:lines="1"
+                android:maxLines="1"
+                android:minLines="1"
+                android:padding="6dp" />
+
+            <EditText
+                android:id="@+id/emailMessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/sendFeedbackButton"
+                android:layout_below="@+id/emailSubject"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:autofillHints=""
+                android:background="@drawable/card_deasign_2"
+                android:elevation="10dp"
+                android:gravity="top|start"
+                android:hint="@string/enter_message"
+                android:lines="8"
+                android:maxLines="20"
+                android:minLines="2"
+                android:padding="6dp"
+                android:scrollbars="vertical" />
+
+            <RelativeLayout
+                android:id="@+id/sendFeedbackButton"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/card_deasign_3"
+                android:clickable="true"
+                android:elevation="10dp"
+                android:focusable="true">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="@string/send_feedbck"
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="210dp"
+            android:layout_height="350dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/feedback_model" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
