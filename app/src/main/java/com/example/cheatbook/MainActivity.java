@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.SearchView;
@@ -26,12 +27,17 @@ import GameContent.GameContents;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
+    //variable
+    static final float END_SCALE = 0.7f;
+
     ImageView menuIcon;
 
     RelativeLayout pcButton;
     RelativeLayout ps3Button;
     RelativeLayout ps4Button;
     RelativeLayout xboxButton;
+
+    LinearLayout contentView;
 
 
     public static final ArrayList<GameData> mostPopular = new ArrayList<GameData>();
@@ -59,6 +65,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         //Menu hooks
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.navigation_header_container);
+        contentView = findViewById(R.id.content);
 
 
         menuIcon = (ImageView) findViewById(R.id.menu_icon);
@@ -108,6 +115,36 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 }
             }
         });
+
+        animateNavigationDrawer();
+
+
+    }
+
+    private void animateNavigationDrawer() {
+
+//        If you want to add color to right side of nav.Drawer
+//        drawerLayout.setScrimColor(getResources().getColor(R.color.yellow));
+        drawerLayout.addDrawerListener(new DrawerLayout.SimpleDrawerListener() {
+
+            @Override
+            public void onDrawerSlide(View drawerView, float slideOffset) {
+                //super.onDrawerSlide(drawerView, slideOffset);
+
+                //scale the view based on current slide offset
+                final float diffScaledOffset = slideOffset * (1 - END_SCALE);
+                final float offsetScale = 1 - diffScaledOffset;
+                contentView.setScaleX(offsetScale);
+                contentView.setScaleY(offsetScale);
+
+                //Translation the view, accounting for the scaled width
+                final float xOffset = drawerView.getWidth() * slideOffset;
+                final float xOffsetDiff = contentView.getWidth() * diffScaledOffset / 2;
+                final float xTranslation = xOffset - xOffsetDiff;
+                contentView.setTranslationX(xTranslation);
+            }
+        });
+
     }
 
     @Override
@@ -143,11 +180,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //                break;
 //
             case R.id.nav_feedback:
-
-            case R.id.nav_contact_us:
-                Intent navFeedback = new Intent(MainActivity.this, FeedbackAndContactUs.class);
+                Intent navFeedback = new Intent(MainActivity.this, Feedback.class);
                 startActivity(navFeedback);
                 break;
+//            case R.id.nav_contact_us:
+
 
             case R.id.nav_about:
                 Intent navAbout = new Intent(MainActivity.this, About.class);
