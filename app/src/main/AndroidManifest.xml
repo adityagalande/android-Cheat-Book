@@ -9,37 +9,28 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CheatBook">
-
+        <activity android:name=".Feedback"></activity>
         <activity
             android:name=".About"
             android:parentActivityName=".MainActivity" />
-
-        <activity android:name=".FeedbackAndContactUs"
+        <activity
+            android:name=".RequestGame"
             android:parentActivityName=".MainActivity" />
-
-        <activity android:name=".RequestGame"
-            android:parentActivityName=".MainActivity" />
-
         <activity
             android:name=".DetailCustomLayout"
             android:parentActivityName=".MainActivity" />
-
         <activity
             android:name=".XboxActivity"
             android:parentActivityName=".MainActivity" />
-
         <activity
             android:name=".PS4Activity"
             android:parentActivityName=".MainActivity" />
-
         <activity
             android:name=".PS3Activity"
             android:parentActivityName=".MainActivity" />
-
         <activity
             android:name=".PCActivity"
             android:parentActivityName=".MainActivity" />
-
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
