@@ -20,9 +20,10 @@
     <string name="request_game">Request Game</string>
     <string name="app_version">Version 1.0.0</string>
     <string name="feedback_activity">FEEDBACK</string>
-    <string name="enter_your_name">Enter your name</string>
+    <string name="enter_your_name">Enter name</string>
     <string name="subject">Subject</string>
     <string name="enter_message">Enter Message</string>
     <string name="select_country">Select Country</string>
     <string name="send_feedbck">Send Feedbck</string>
+    <string name="enter_game_suggestion">Enter Game Suggestion...</string>
 </resources>
