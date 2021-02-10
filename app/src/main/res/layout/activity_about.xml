@@ -1,9 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/yellow"
     tools:context=".About">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/about"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/luckiestguy_regular"
+        android:gravity="center_horizontal"
+        android:padding="20dp"
+        android:text="about CheatBook"
+        android:textColor="@color/black"
+        android:textSize="35sp"
+        android:textStyle="bold" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/about"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/about_design"
+        android:paddingLeft="17dp"
+        android:paddingTop="50dp"
+        android:paddingRight="17dp"
+        android:paddingBottom="17dp">
+
+
+        <TextView
+            android:id="@+id/about_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            tools:text="sample text"
+            android:textSize="17sp"
+            android:layout_alignParentTop="true"/>
+
+        <TextView
+            android:id="@+id/about_version"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            tools:text="sample version"
+            android:textSize="17sp"
+            android:gravity="center_horizontal"
+            android:layout_alignParentBottom="true"/>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>
