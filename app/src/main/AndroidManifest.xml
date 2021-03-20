@@ -18,7 +18,7 @@
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".DetailCustomLayout"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".XboxActivity"
             android:parentActivityName=".MainActivity" />

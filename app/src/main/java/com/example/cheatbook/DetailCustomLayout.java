@@ -9,6 +9,8 @@ import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.Objects;
+
 public class DetailCustomLayout extends AppCompatActivity {
     GameData gameData;
 
@@ -17,15 +19,24 @@ public class DetailCustomLayout extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detail_custom_layout);
+         setContentView(R.layout.activity_detail_custom_layout);
 
-        getSupportActionBar().setTitle("Most Popular");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+         //To hide Title Bar
+        try {
+            Objects.requireNonNull(this.getSupportActionBar()).hide();
+        } catch (NullPointerException ignored) {
+        }
+
+
+//        getSupportActionBar().setTitle("Most Popular");
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         getSelectedShape();
         setValues();
         Log.v("DetailCustomLayout","-----------------------------------------------------------OnCreate");
     }
+    
 
     private void getSelectedShape(){
         Intent previousIntent = getIntent();
