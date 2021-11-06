@@ -27,10 +27,10 @@
         android:background="@drawable/layout_bg"
         android:elevation="4dp"
         android:fontFamily="@font/rakkas_regular"
-        android:gravity="center"
+        android:gravity="start"
         android:padding="4dp"
         android:textColor="@color/black"
-        android:textSize="30sp"
+        android:textSize="21sp"
         android:textStyle="bold|italic"
         tools:text="@string/Red_Dead_Redemption_2" />
 
@@ -56,7 +56,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
-                android:textSize="17sp"
+                android:textSize="14sp"
                 android:textColor="@color/black"
                 android:textStyle="bold|italic"
                 tools:text="@string/Red_Dead_Redemption_2" />
@@ -68,14 +68,16 @@
         android:id="@+id/share"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:layout_margin="14dp"
+        android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
-        android:backgroundTint="@color/yellow"
-        app:borderWidth="0dp"
-        app:elevation="6dp"
-        app:fabSize="normal"
-        android:src="@drawable/menu_share"/>
+        android:layout_margin="14dp"
+        android:layout_marginEnd="29dp"
+        android:layout_marginBottom="533dp"
+        android:backgroundTint="@color/light_green"
+        android:src="@drawable/menu_share"
+        app:borderWidth="1dp"
+        app:elevation="10dp"
+        app:fabSize="normal" />
 
 </RelativeLayout>

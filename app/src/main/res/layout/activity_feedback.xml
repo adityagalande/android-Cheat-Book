@@ -83,7 +83,6 @@
                     android:elevation="10dp"
                     android:gravity="start|center_vertical"
                     android:hint="@string/enter_your_name"
-                    android:inputType="textPersonName"
                     android:lines="2"
                     android:maxLines="2"
                     android:minLines="1"
