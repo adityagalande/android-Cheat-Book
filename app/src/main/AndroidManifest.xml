@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CheatBook">
-        <activity android:name=".Feedback"></activity>
+        <activity android:name=".Feedback" />
         <activity
             android:name=".About"
             android:parentActivityName=".MainActivity" />

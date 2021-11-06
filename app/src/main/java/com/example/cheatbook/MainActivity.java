@@ -279,7 +279,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Log.v("MainActivity", "-----------------------------------------------------------setUpOnClickListener");
             }
         });
-
     }
 
 }
